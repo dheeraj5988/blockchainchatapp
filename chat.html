@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to the Chat Room</h1>
+            <p>Logged in as: <span id="username"></span></p>
+        </header>
+        <main>
+            <section class="chat">
+                <h2>Chat Messages</h2>
+                <div id="messageHistory"></div> <!-- Div for displaying chat history -->
+                <form id="messageForm">
+                    <input type="text" id="messageInput" placeholder="Type your message..." required>
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+            <!-- Add UI for Private Chat -->
+<section class="private-chat">
+    <h2>Private Chat</h2>
+    <div id="privateMessageHistory"></div> <!-- Div for displaying private chat history -->
+    <form id="privateMessageForm">
+        <input type="text" id="privateMessageInput" placeholder="Type your private message..." required>
+        <input type="text" id="recipientAddressInput" placeholder="Recipient's Ethereum address" required>
+        <button type="submit">Send Private Message</button>
+    </form>
+</section>
+
+        </main>
+        <footer>
+            <p>&copy; 2024 Anonymous Chat</p>
+        </footer>
+    </div>
+
+    <!-- Add Socket.io library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+    <script src="zkp.js"></script> <!-- Include ZKP script -->
+    <script>
+        // Get username from localStorage
+        const username = localStorage.getItem('username');
+        document.getElementById('username').textContent = username;
+
+        // Establish WebSocket connection with the backend server
+        const socket = io();
+
+        // Function to add message to the chat history
+        function addMessageToHistory(message) {
+            // Create message element
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+
+            // Append message element to message history div
+            document.getElementById('messageHistory').appendChild(messageElement);
+        }
+
+        // Handle form submission to send chat message
+        document.getElementById('messageForm').addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent form submission
+
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value.trim();
+
+            if (message) {
+                // Add sent message to the chat history
+                addMessageToHistory(`You: ${message}`);
+
+                // Emit 'chat message' event to the backend server
+                socket.emit('chat message', message);
+
+                // Clear message input field
+                messageInput.value = '';
+            }
+        });
+
+        // Handle incoming chat messages from the backend server
+        socket.on('chat message', (message) => {
+            // Add received message to the chat history
+            addMessageToHistory(message);
+        });
+    </script>
+</body>
+</html>
