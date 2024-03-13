@@ -48,7 +48,6 @@ displayUserAddress();
 // Attach click event listener to the login button
 document.getElementById('loginButton').addEventListener('click', loginWithMetaMask);
 
-
 // Establish WebSocket connection with the backend server
 const socket = io();
 
@@ -60,3 +59,19 @@ socket.on('chat message', (message) => {
     console.log('Received message:', message);
     // Process the received message
 });
+
+// Function to add message to the chat history
+// Function to add message to the chat history in reverse order
+function addMessageToHistory(message) {
+    // Create message element
+    const messageElement = document.createElement('div');
+    messageElement.textContent = message;
+
+    // Get the chat history container
+    const messageHistory = document.getElementById('messageHistory');
+
+    // Prepend the new message element to the beginning of the chat history
+    // This ensures that the most recent message is always at the top
+    messageHistory.prepend(messageElement);
+}
+
