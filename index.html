@@ -5,74 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anonymous Chat</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            max-width: 600px;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 32px;
-            color: #007bff;
-        }
-
-        .authentication {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        #loginButton {
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        .get-started-button {
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        #userAddress {
-            font-size: 16px;
-            margin-top: 20px;
-        }
-
-        footer {
-            margin-top: 30px;
-            text-align: center;
-            color: #888;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -82,12 +14,15 @@
         <main>
             <section class="authentication">
                 <h2>Login with MetaMask to Start</h2>
-                <button id="loginButton">Login with MetaMask</button>
-                <a href="https://github.com/dheeraj5988/blockchainchatapp/blob/main/README.md" class="get-started-button">Getting Started</a>
+                
             </section>
         </main>
+        <div class="container">
+            <button id="loginButton">Login with MetaMask</button>
+            <a href="https://github.com/dheeraj5988/blockchainchatapp/blob/main/README.md" class="get-started-button">Getting Started</a>
+        </div>
         <footer>
-            <p>&copy; Decentralized Chat</p>
+            <p>&copy;decentralized chat</p>
             <p id="userAddress"></p> <!-- Display user's Ethereum address here -->
         </footer>
     </div>
@@ -111,7 +46,7 @@
                     const accounts = await window.ethereum.request({ method: 'eth_accounts' });
                     const userAddress = accounts[0];
                     // Display user's Ethereum address
-                    document.getElementById('userAddress').textContent = Logged in as: ${userAddress};
+                    document.getElementById('userAddress').textContent = `Logged in as: ${userAddress}`;
                     // Redirect to chat room page
                     window.location.href = 'chat.html';
                 } catch (error) {
