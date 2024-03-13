@@ -90,3 +90,20 @@ footer {
     margin-top: 20px;
     color: #888;
 }
+
+
+
+
+.get-started-button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #007bff; /* Blue color */
+    color: #fff;
+    text-decoration: none; /* Remove underline */
+    border-radius: 15px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.get-started-button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
