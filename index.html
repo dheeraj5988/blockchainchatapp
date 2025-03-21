@@ -3,27 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anonymous Chat</title>
+    <title>DecentralChat - Blockchain-Based Secure Communication</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="dark">
     <div class="container">
-        <header>
-            <h1>Decentralized Chat</h1>
+        <header class="main-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-link"></i>
+                </div>
+                <h1>DecentralChat</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="https://github.com/dheeraj5988/blockchainchatapp/blob/main/README.md">Docs</a>
+            </nav>
+            <button id="loginButton" class="btn btn-primary">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Connect Wallet</span>
+            </button>
         </header>
-        <main>
-            <section class="authentication">
-                <h2>Login with MetaMask to Start</h2>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Secure, Private & Decentralized Chat</h1>
+                <p class="hero-subtitle">
+                    Experience the future of communication with our blockchain-powered chat platform.
+                    No central servers, no data mining, just secure peer-to-peer messaging.
+                </p>
+                <div class="hero-buttons">
+                    <button id="heroLoginButton" class="btn btn-primary btn-lg">
+                        <i class="fa-solid fa-wallet"></i>
+                        <span>Connect Wallet</span>
+                    </button>
+                    <a href="https://github.com/dheeraj5988/blockchainchatapp/blob/main/README.md" class="btn btn-outline btn-lg">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            
+            <div class="chat-preview">
+                <div class="chat-preview-header">
+                    <div class="chat-user">
+                        <div class="avatar">DC</div>
+                        <span>DecentralChat</span>
+                    </div>
+                    <div class="chat-status">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>End-to-end encrypted</span>
+                    </div>
+                </div>
+                <div class="chat-messages">
+                    <div class="message received">
+                        <div class="message-content">
+                            Hey there! How's it going? This message is secured by blockchain technology.
+                        </div>
+                        <div class="message-time">10:42 AM</div>
+                    </div>
+                    <div class="message sent">
+                        <div class="message-content">
+                            Hi! I'm good. Love how secure this feels knowing no one can access our conversation!
+                        </div>
+                        <div class="message-time">10:45 AM</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="section-header">
+                <h2>Why Choose DecentralChat?</h2>
+                <p>
+                    Our blockchain-based chat application offers unparalleled security and privacy features
+                    that traditional messaging platforms simply can't match.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3>End-to-End Encryption</h3>
+                    <p>All messages are encrypted before being stored on the blockchain. Only the sender and recipient can decrypt messages using their private keys.</p>
+                </div>
                 
-            </section>
-        </main>
-        <div class="container">
-            <button id="loginButton">Login with MetaMask</button>
-            <a href="https://github.com/dheeraj5988/blockchainchatapp/blob/main/README.md" class="get-started-button">Getting Started</a>
-        </div>
-        <footer>
-            <p>&copy;decentralized chat</p>
-            <p id="userAddress"></p> <!-- Display user's Ethereum address here -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3>Decentralized Storage</h3>
+                    <p>Messages are recorded on a blockchain ledger, ensuring immutability and tamper-proof communication.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h3>Wallet Authentication</h3>
+                    <p>Users authenticate via a blockchain wallet (e.g., MetaMask), ensuring secure and anonymous access.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3>P2P Communication</h3>
+                    <p>Messages are transmitted through a decentralized P2P network instead of relying on a centralized server.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3>Real-Time Messaging</h3>
+                    <p>WebSocket or a decentralized notification protocol ensures real-time message updates.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-user-secret"></i>
+                    </div>
+                    <h3>Anonymous Identity</h3>
+                    <p>No personal data is stored centrally. Users interact using blockchain addresses or pseudonyms.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>
+                    Our decentralized architecture ensures your messages remain private and secure.
+                </p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Connect Your Wallet</h3>
+                        <p>Login securely with MetaMask or any Web3 wallet. Your wallet address serves as your unique identifier.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Send Encrypted Messages</h3>
+                        <p>Your messages are encrypted with the recipient's public key, ensuring only they can decrypt and read them.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>Blockchain Storage</h3>
+                        <p>Message metadata is stored on the blockchain while content is stored on IPFS for efficiency and cost-effectiveness.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>Real-Time Communication</h3>
+                        <p>Receive messages instantly through our P2P network, with blockchain verification ensuring authenticity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <p>&copy; <span id="currentYear"></span> DecentralChat - Secure & Decentralized Communication</p>
+            <p id="userAddress"></p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-discord"></i></a>
+            </div>
         </footer>
     </div>
 
@@ -31,35 +192,16 @@
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <!-- Include Socket.io library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
-    <script src="script.js"></script> <!-- Include your combined JavaScript file -->
+    <script src="web3.js"></script>
+    <script src="script.js"></script>
 
     <script>
-        // Function to initialize Web3
-        async function initWeb3() {
-            // Check if MetaMask is installed
-            if (window.ethereum) {
-                window.web3 = new Web3(window.ethereum);
-                try {
-                    // Request account access if needed
-                    await window.ethereum.request({ method: 'eth_requestAccounts' });
-                    // Accounts now exposed
-                    const accounts = await window.ethereum.request({ method: 'eth_accounts' });
-                    const userAddress = accounts[0];
-                    // Display user's Ethereum address
-                    document.getElementById('userAddress').textContent = `Logged in as: ${userAddress}`;
-                    // Redirect to chat room page
-                    window.location.href = 'chat.html';
-                } catch (error) {
-                    console.error(error);
-                    alert('You need to allow access to MetaMask to log in.');
-                }
-            } else {
-                alert('Please install MetaMask to use this feature.');
-            }
-        }
-
-        // Attach click event listener to login button
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Attach click event listener to both login buttons
         document.getElementById('loginButton').addEventListener('click', initWeb3);
+        document.getElementById('heroLoginButton').addEventListener('click', initWeb3);
     </script>
 </body>
 </html>
